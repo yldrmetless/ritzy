@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Ritzy Games</title>
+  </head>
+  <body class="bg-gray-800 font-primary">
+    <div class="mt-0">
+      <nav
+        class="border-b fixed z-10 w-full border-gray-800 bg-gray-700 shadow-2xl py-3 text-white"
+      >
+        <div class="w-full lg:px-28 px-8 mx-auto">
+          <div class="flex justify-between h-16">
+            <div class="flex">
+              <div class="flex-shrink-0 flex items-center">
+                <a href="#" class="text-2xl font-bold">Logo</a>
+              </div>
+            </div>
+            <!-- Masaüstü Menüsü -->
+            <div class="hidden md:flex md:items-center gap-x-4 md:space-x-4">
+              <div class="relative group">
+                <a href="#home" id="nav-home">Ana Sayfa</a>
+                <div
+                  class="bg-blue-500 w-full h-1 absolute left-0 -bottom-1 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
+                ></div>
+              </div>
+              <div class="relative group">
+                <a href="#about" id="nav-about">Hakkımızda</a>
+                <div
+                  class="bg-blue-500 w-full h-1 absolute left-0 -bottom-1 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
+                ></div>
+              </div>
+              <div class="relative group">
+                <a href="#games" id="nav-games">Oyunlar</a>
+                <div
+                  class="bg-blue-500 w-full h-1 absolute left-0 -bottom-1 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
+                ></div>
+              </div>
+              <div class="relative group">
+                <a href="#contact" id="nav-contact">İletişim</a>
+                <div
+                  class="bg-blue-500 w-full h-1 absolute left-0 -bottom-1 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
+                ></div>
+              </div>
+
+              <!-- Dil Seçeneği -->
+              <div class="flex items-center space-x-4">
+                <select
+                  id="language-selector"
+                  class="bg-gray-600 focus:outline-none w-24 text-white p-2 rounded"
+                >
+                  <option value="tr">TR</option>
+                  <option value="en">EN</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Mobil Hamburger Menüsü -->
+            <div class="flex items-center md:hidden">
+              <button id="menu-button" class="focus:outline-none">
+                <svg
+                  id="hamburger-icon"
+                  class="h-6 w-6 block"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+                <svg
+                  id="close-icon"
+                  class="h-6 w-6 hidden z-10 fixed top-16 right-8 text-2xl"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Mobil Menü -->
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden fixed inset-0 bg-gray-800 transform transition-transform duration-500 ease-in-out"
+        >
+          <div
+            class="flex flex-col justify-center items-center h-full space-y-6"
+          >
+            <a
+              href="#home"
+              id="mobile-nav-home"
+              class="block text-center text-white text-xl font-medium hover:bg-gray-600 py-2 px-3 rounded-md"
+              >Ana Sayfa</a
+            >
+            <a
+              href="#about"
+              id="mobile-nav-about"
+              class="block text-center text-white text-xl font-medium hover:bg-gray-600 py-2 px-3 rounded-md"
+              >Hakkımızda</a
+            >
+            <a
+              href="#games"
+              id="mobile-nav-games"
+              class="block text-center text-white text-xl font-medium hover:bg-gray-600 py-2 px-3 rounded-md"
+              >Oyunlar</a
+            >
+            <a
+              href="#contact"
+              id="mobile-nav-contact"
+              class="block text-center text-white text-xl font-medium hover:bg-gray-600 py-2 px-3 rounded-md"
+              >İletişim</a
+            >
+            <select
+              id="language-selector-mobile"
+              class="bg-gray-600 text-white p-2 rounded"
+            >
+              <option value="tr">TR</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
+        </div>
+      </nav>
+
+      <section
+        id="home"
+        class="lg:px-28 px-8 h-screen w-full flex lg:justify-between justify-center items-center"
+      >
+        <div class="">
+          <h1 class="lg:text-7xl text-4xl font-semibold text-white">
+            Ritzy <span class="text-blue-400">Games</span>
+          </h1>
+          <p
+            id="home-slogan"
+            class="mt-5 lg:text-3xl tracking-wide text-xl text-white"
+          >
+            Unutulmaz Oyun Deneyimleri Sizi Bekliyor
+          </p>
+          <a
+            id="play-button"
+            href="../../Web/index.html"
+            target="_blank"
+            class="bg-blue-500 py-2 px-10 mt-6 inline-block rounded-lg text-white hover:bg-blue-600 transition-all duration-200 text-lg"
+            >Şimdi Oyna</a
+          >
+        </div>
+        <div>
+          <h1 class="lg:text-6xl text-white lg:block hidden">Resim Alanı</h1>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="lg:px-28 px-8 py-28 relative flex lg:flex-row flex-col items-center justify-between gap-x-36"
+      >
+        <div>
+          <h1
+            class="text-white lg:text-4xl text-2xl relative tracking-wide font-semibold"
+            id="aboutTitle"
+          >
+            <span class="text-blue-500">RITZY GAMES</span> HAKKIMIZDA
+          </h1>
+          <div class="bg-blue-500 absolute w-20 h-1 top-40"></div>
+
+          <div
+            class="mt-10 text-white flex flex-col gap-y-4 leading-8 font-light tracking-wide lg:text-lg text-base"
+          >
+            <p id="aboutFirst">
+              2007 yılında, oyun dünyasının hızla büyüdüğü bir dönemde,
+              tutkumuzu işe dönüştürerek oyun puanları satışı yapan bir firma
+              olarak yola çıktık. İlk günden itibaren amacımız, oyun severlere
+              en iyi hizmeti sunmak ve onların oyun deneyimlerini bir üst
+              seviyeye taşımaktı. Yıllar içinde binlerce oyuncuya hizmet verdik,
+              onların taleplerini dinledik, sorunlarına çözümler ürettik ve bu
+              sayede sektörün nabzını tutmayı başardık.
+            </p>
+            <p id="aboutSecond">
+              Müşterilerimizin bize ilettiği geri bildirimler, şikayetler ve
+              talepler, her zaman işimizin temel taşı oldu. Onlardan aldığımız
+              değerli bilgilerle sürekli olarak kendimizi geliştirdik,
+              yeniliklere açık olduk ve en önemlisi oyuncuların ne istediğini
+              tam anlamıyla anladık. Bu anlayış, bizi sadece bir hizmet
+              sağlayıcı olmaktan öteye taşıdı; bizi bir oyun tutkunu
+              topluluğunun bir parçası yaptı.
+            </p>
+            <p id="aboutThird">
+              Artık, bu sektörde edindiğimiz 17 yıllık tecrübe ve bilgi
+              birikimiyle yeni bir adım atma zamanı geldi. Oyun dünyasında
+              sadece bir satıcı olarak değil, kendi oyununu geliştiren bir firma
+              olarak yerimizi alıyoruz. Kurduğumuz bu yeni oyun, yıllardır
+              oyunculardan öğrendiklerimizi yansıtan, onların beklentilerini ve
+              hayallerini gerçeğe dönüştüren bir platform olacak.
+            </p>
+            <p id="aboutFourth">
+              Bu yeni yolculukta amacımız, oyun severlerin kalbinde yer edinmek
+              ve onların eğlence anlayışını değiştirecek bir deneyim sunmak. Her
+              zaman olduğu gibi, oyuncuların memnuniyeti ve istekleri bizim için
+              en öncelikli konu olacak. Çünkü biliyoruz ki, başarı hikayemizi
+              yazmamızı sağlayan, bizlere güvenen ve destek olan
+              oyuncularımızdır.
+            </p>
+            <p id="aboutFifth">
+              Sizlerle birlikte büyüdük, sizlerden öğrendik ve şimdi sizler için
+              en iyisini sunmak üzere kendi oyunumuzu yaratıyoruz. Bu heyecan
+              verici macerada bizlerle birlikte olmanızı sabırsızlıkla
+              bekliyoruz.
+            </p>
+          </div>
+        </div>
+        <div class="lg:block hidden">
+          <img src="../src/img/game.png" alt="" />
+        </div>
+      </section>
+
+      <div class="relative w-full">
+        <img
+          src="../src/img/banner.jpg"
+          alt=""
+          class="lg:h-[300px] h-[200px] object-cover w-full lg:mt-40 mt-24 relative"
+        />
+        <h1
+          class="text-white lg:text-4xl text-xl absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]"
+          id="banner-title"
+        >
+          OYUNLAR
+        </h1>
+      </div>
+      <section
+        id="games"
+        class="lg:px-28 px-8 pt-28 flex justify-between items-start lg:gap-x-36 lg:flex-row flex-col relative h-screen"
+      >
+        <div>
+          <div class="relative">
+            <h1 class="lg:text-3xl text-xl text-white font-semibold relative">
+              RITZY POKER
+            </h1>
+            <div class="bg-blue-500 absolute w-20 h-1 top-10"></div>
+
+            <p
+              class="lg:text-lg text-base text-white font-light leading-8 tracking-wide mt-6"
+              id="game-description"
+            >
+              Şirketimizin ilk oyunu olan Ritzy Poker, oyun dünyasında fark
+              yaratmak için tasarlandı. Eğlenceyi, stratejiyi ve heyecanı bir
+              araya getiren bu oyun, oyunculara benzersiz bir poker deneyimi
+              sunuyor. Ritzy Poker ile şansınızı ve yeteneklerinizi test etmeye
+              hazır mısınız? Masadaki yerinizi alın ve büyük ödüller için
+              oynayın!
+            </p>
+          </div>
+          <div class="mt-16 flex flex-col items-start gap-x-4">
+            <div
+              class="flex lg:justify-start justify-center items-center gap-x-4"
+            >
+              <a href="#" class="inline-block">
+                <img
+                  src="../src/img/appstore.png"
+                  alt=""
+                  class="lg:w-[200px] w-[150px]"
+                />
+              </a>
+              <a href="#" class="inline-block">
+                <img
+                  src="../src/img/playstore.png"
+                  alt=""
+                  class="lg:w-[250px] w-[180px]"
+                />
+              </a>
+            </div>
+            <a
+              href="../../Web/index.html"
+              class="mt-3 lg:w-[450px] w-full py-2 bg-blue-500 text-white text-lg hover:bg-blue-600 transition-all duration-200 rounded-lg flex items-center justify-center"
+              id="play-button2"
+              >Şimdi Oyna</a
+            >
+          </div>
+        </div>
+        <div class="lg:block hidden">
+          <img src="../src/img/pokergame.jpg" alt="" />
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="lg:px-28 px-8 pb-28 relative flex flex-col items-center justify-between gap-x-36"
+      >
+        <h1
+          class="text-white lg:text-4xl text-2xl relative tracking-wide font-semibold text-center"
+          id="contactTitle"
+        >
+          İLETİŞİM
+        </h1>
+        <div class="bg-blue-500 absolute w-20 h-1 top-16"></div>
+
+        <form
+          id="contact-form"
+          class="mt-20 w-full flex justify-center flex-col items-center"
+        >
+          <div class="flex flex-col items-start lg:w-auto w-full">
+            <label for="" class="text-white" id="namesurname">Ad-Soyad</label>
+            <input
+              id="from_name"
+              name="from_name"
+              type="text"
+              class="lg:w-[600px] w-full mt-4 rounded-lg bg-gray-700 py-3 text-white focus:outline-none px-6 border border-gray-500"
+            />
+          </div>
+          <div class="flex flex-col items-start mt-6 lg:w-auto w-full">
+            <label for="" class="text-white">Email</label>
+            <input
+              id="user_email"
+              name="user_email"
+              type="email"
+              class="lg:w-[600px] w-full mt-4 rounded-lg bg-gray-700 py-3 text-white focus:outline-none px-6 border border-gray-500"
+            />
+          </div>
+          <div class="flex flex-col items-start mt-6 lg:w-auto w-full">
+            <label for="" class="text-white" id="msgArea">Mesajınız</label>
+            <textarea
+              id="message"
+              name="message"
+              class="lg:w-[600px] w-full h-[200px] mt-4 rounded-lg bg-gray-700 py-3 text-white focus:outline-none px-6 border border-gray-500 resize-none"
+            ></textarea>
+          </div>
+          <button
+            class="lg:w-[600px] w-full bg-blue-500 hover:bg-blue-600 rounded-lg text-white text-lg transition-all duration-200 mt-4 py-3"
+            id="submitButton"
+          >
+            Gönder
+          </button>
+        </form>
+      </section>
+
+      <footer
+        class="bg-gray-600 border border-gray-400 py-12 lg:px-28 px-8 flex lg:flex-row flex-col lg:mx-0 mx-auto justify-between items-start lg:text-lg text-sm"
+      >
+        <div>
+          <h1 class="lg:text-2xl text-white">Logo</h1>
+          <div class="flex items-center gap-x-2 mt-6">
+            <i
+              class="fa-solid fa-envelope bg-gray-700 rounded-full p-3 text-blue-500 cursor-pointer"
+            ></i>
+            <a href="mailto:ritzygames.com@gmail.com" class="text-white"
+              >ritzygames.com@gmail.com</a
+            >
+          </div>
+        </div>
+        <div class="flex flex-col gap-y-3 text-white lg:text-lg text-sm lg:mt-0 mt-6">
+          <a
+            id="footer-home"
+            href="#home"
+            class="hover:text-blue-500 transition-all duration-200"
+            >Ana Sayfa</a
+          >
+          <a
+            id="footer-about"
+            href="#about"
+            class="hover:text-blue-500 transition-all duration-200"
+            >Hakkımızda</a
+          >
+          <a
+            id="footer-games"
+            href="#games"
+            class="hover:text-blue-500 transition-all duration-200"
+            >Oyunlar</a
+          >
+          <a
+            id="footer-contact"
+            href="#contact"
+            class="hover:text-blue-500 transition-all duration-200"
+            >İletişim</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script>
+      const languageSelector = document.getElementById("language-selector");
+      const languageSelectorMobile = document.getElementById(
+        "language-selector-mobile"
+      );
+
+      // Dil içerikleri
+      const content = {
+        tr: {
+          navHome: "Ana Sayfa",
+          navAbout: "Hakkımızda",
+          navGames: "Oyunlar",
+          navContact: "İletişim",
+          homeSlogan: "Unutulmaz Oyun Deneyimleri Sizi Bekliyor",
+          playButton: "Şimdi Oyna",
+          aboutTitle: "HAKKIMIZDA",
+          aboutFirst:
+            "2007 yılında, oyun dünyasının hızla büyüdüğü bir dönemde,tutkumuzu işe dönüştürerek oyun puanları satışı yapan bir firma olarak yola çıktık. İlk günden itibaren amacımız, oyun severlere en iyi hizmeti sunmak ve onların oyun deneyimlerini bir üst seviyeye taşımaktı. Yıllar içinde binlerce oyuncuya hizmet verdik, onların taleplerini dinledik, sorunlarına çözümler ürettik ve bu sayede sektörün nabzını tutmayı başardık.",
+          aboutSecond:
+            "Müşterilerimizin bize ilettiği geri bildirimler, şikayetler ve talepler, her zaman işimizin temel taşı oldu. Onlardan aldığımız değerli bilgilerle sürekli olarak kendimizi geliştirdik, yeniliklere açık olduk ve en önemlisi oyuncuların ne istediğini tam anlamıyla anladık. Bu anlayış, bizi sadece bir hizmet sağlayıcı olmaktan öteye taşıdı; bizi bir oyun tutkunu topluluğunun bir parçası yaptı.",
+          aboutThird:
+            "Artık, bu sektörde edindiğimiz 17 yıllık tecrübe ve bilgi birikimiyle yeni bir adım atma zamanı geldi. Oyun dünyasında sadece bir satıcı olarak değil, kendi oyununu geliştiren bir firma olarak yerimizi alıyoruz. Kurduğumuz bu yeni oyun, yıllardır oyunculardan öğrendiklerimizi yansıtan, onların beklentilerini ve hayallerini gerçeğe dönüştüren bir platform olacak.",
+          aboutFourth:
+            "Bu yeni yolculukta amacımız, oyun severlerin kalbinde yer edinmek ve onların eğlence anlayışını değiştirecek bir deneyim sunmak. Her zaman olduğu gibi oyuncuların memnuniyeti ve istekleri bizim için en öncelikli konu olacak. Çünkü biliyoruz ki, başarı hikayemizi yazmamızı sağlayan, bizlere güvenen ve destek olan oyuncularımızdır.",
+          aboutFifth:
+            "Sizlerle birlikte büyüdük, sizlerden öğrendik ve şimdi sizler için en iyisini sunmak üzere kendi oyunumuzu yaratıyoruz. Bu heyecan verici macerada bizlerle birlikte olmanızı sabırsızlıkla bekliyoruz.",
+          bannerTitle: "OYUNLAR",
+          gameDescription:
+            "Şirketimizin ilk oyunu olan Ritzy Poker, oyun dünyasında fark yaratmak için tasarlandı. Eğlenceyi, stratejiyi ve heyecanı bir araya getiren bu oyun, oyunculara benzersiz bir poker deneyimi sunuyor. Ritzy Poker ile şansınızı ve yeteneklerinizi test etmeye hazır mısınız? Masadaki yerinizi alın ve büyük ödüller için oynayın!",
+          playButton2: "Şimdi Oyna",
+          contactTitle: "İLETİŞİM",
+          namesurname: "Ad-Soyad",
+          msgArea: "Mesajınız",
+          submitButton: "Gönder",
+          footerHome: "Ana Sayfa",
+          footerAbout: "Hakkımızda",
+          footerGames: "Oyunlar",
+          footerContact: "İletişim",
+        },
+        en: {
+          navHome: "Home",
+          navAbout: "About Us",
+          navGames: "Games",
+          navContact: "Contact",
+          homeSlogan: "Unforgettable Gaming Experiences Await You",
+          playButton: "Play Now",
+          aboutTitle: "ABOUT",
+          aboutFirst:
+            "In 2007, at a time when the gaming world was rapidly growing, we set out as a company that sells game points by turning our passion into a business. From the very beginning, our goal was to provide the best service to gamers and take their gaming experiences to the next level. Over the years, we have served thousands of players, listened to their demands, found solutions to their problems, and thus managed to keep our finger on the pulse of the industry.",
+          aboutSecond:
+            "The feedback, complaints, and requests that our customers have conveyed to us have always been the cornerstone of our business. The valuable information we received from them enabled us to constantly improve ourselves, be open to innovations, and, most importantly, fully understand what players want. This understanding has taken us beyond being just a service provider; it has made us a part of a community of gaming enthusiasts.",
+          aboutThird:
+            "Now, with the 17 years of experience and knowledge we have gained in this industry, it is time to take a new step. We are taking our place in the gaming world not only as a seller but as a company that develops its own game. This new game we have created will be a platform that reflects what we have learned from players over the years, turning their expectations and dreams into reality.",
+          aboutFourth:
+            "In this new journey, our goal is to establish a place in the hearts of gamers and offer an experience that will change their understanding of entertainment. As always, the satisfaction and demands of players will be our top priority. Because we know that our success story is made possible by the players who trust and support us.",
+          aboutFitfh:
+            "We have grown with you, learned from you, and now we are creating our own game to offer you the best. We are excited to have you with us on this thrilling adventure.",
+          bannerTitle: "GAMES",
+          gameDescription:
+            "Ritzy Poker, the first game of our company, was designed to make a difference in the gaming world. This game, which brings together fun, strategy, and excitement, offers players a unique poker experience. Are you ready to test your luck and skills with Ritzy Poker? Take your place at the table and play for big prizes!",
+          playButton2: "Play Now",
+          contactTitle: "CONTACT",
+          namesurname: "Name-Surname",
+          msgArea: "Your Message",
+          submitButton: "Send",
+          footerHome: "Home",
+          footerAbout: "About Us",
+          footerGames: "Games",
+          footerContact: "Contact",
+        },
+      };
+
+      // Dil değiştirme fonksiyonu
+      function changeLanguage(language) {
+        document.getElementById("nav-home").textContent =
+          content[language].navHome;
+        document.getElementById("nav-about").textContent =
+          content[language].navAbout;
+        document.getElementById("nav-games").textContent =
+          content[language].navGames;
+        document.getElementById("nav-contact").textContent =
+          content[language].navContact;
+        document.getElementById("play-button").textContent =
+          content[language].playButton;
+        document.getElementById("aboutTitle").textContent =
+          content[language].aboutTitle;
+        document.getElementById("aboutFirst").textContent =
+          content[language].aboutFirst;
+        document.getElementById("aboutSecond").textContent =
+          content[language].aboutSecond;
+        document.getElementById("aboutThird").textContent =
+          content[language].aboutThird;
+        document.getElementById("aboutFourth").textContent =
+          content[language].aboutFourth;
+        document.getElementById("aboutFifth").textContent =
+          content[language].aboutFifth;
+        document.getElementById("banner-title").textContent =
+          content[language].bannerTitle;
+        document.getElementById("game-description").textContent =
+          content[language].gameDescription;
+        document.getElementById("play-button2").textContent =
+          content[language].playButton2;
+        document.getElementById("contactTitle").textContent =
+          content[language].contactTitle;
+        document.getElementById("namesurname").textContent =
+          content[language].namesurname;
+        document.getElementById("msgArea").textContent =
+          content[language].msgArea;
+        document.getElementById("submitButton").textContent =
+          content[language].submitButton;
+        document.getElementById("footer-home").textContent =
+          content[language].footerHome;
+        document.getElementById("footer-about").textContent =
+          content[language].footerAbout;
+        document.getElementById("footer-games").textContent =
+          content[language].footerGames;
+        document.getElementById("footer-contact").textContent =
+          content[language].footerContact;
+
+        document.getElementById("mobile-nav-home").textContent =
+          content[language].navHome;
+        document.getElementById("mobile-nav-about").textContent =
+          content[language].navAbout;
+        document.getElementById("mobile-nav-games").textContent =
+          content[language].navGames;
+        document.getElementById("mobile-nav-contact").textContent =
+          content[language].navContact;
+
+        document.getElementById("home-slogan").textContent =
+          content[language].homeSlogan;
+
+        document.getElementById("play-button").textContent =
+          content[language].playButton;
+      }
+
+      // Dil seçeneği değiştirildiğinde çalışır
+      languageSelector.addEventListener("change", (e) => {
+        changeLanguage(e.target.value);
+      });
+
+      languageSelectorMobile.addEventListener("change", (e) => {
+        changeLanguage(e.target.value);
+      });
+
+      // Varsayılan dil
+      changeLanguage("tr");
+
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const hamburgerIcon = document.getElementById("hamburger-icon");
+      const closeIcon = document.getElementById("close-icon");
+
+      // Hamburger menü açma/kapatma
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        hamburgerIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      });
+
+      // Mobil menü öğelerine tıklanınca menüyü kapat
+      const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          hamburgerIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+        });
+      });
+
+      emailjs.init({
+        publicKey: "lx5zswhZp8qn-wS5e",
+      });
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Formun varsayılan gönderimini engelle
+
+          const formData = new FormData(event.target);
+
+          // Form verilerini JSON formatına dönüştür
+          const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            message: formData.get("message"),
+          };
+
+          // EmailJS'e form verilerini gönder
+          emailjs.send("service_y30pzyy", "template_cjf07qb", data).then(
+            function (response) {
+              console.log("E-posta başarıyla gönderildi:", response);
+              alert("Mesajınız başarıyla gönderildi!");
+            },
+            function (error) {
+              console.log("E-posta gönderilirken bir hata oluştu:", error);
+              alert(
+                "Mesajınız gönderilirken bir hata oluştu. Lütfen tekrar deneyin."
+              );
+            }
+          );
+        });
+    </script>
+  </body>
+</html>
